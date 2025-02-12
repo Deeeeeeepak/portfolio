@@ -8,7 +8,13 @@ import useOnScreen from "@/hooks/useOnScreen";
 import useScrollActive from "@/hooks/useScrollActive";
 import { useSection } from "@/context/section";
 
+
+
+
+  
 const ContactSection: React.FC = () => {
+
+    
     const { theme } = useTheme();
     const sectionRef = useRef<HTMLDivElement>(null);
     const elementRef = useRef<HTMLDivElement>(null);
@@ -53,7 +59,7 @@ const ContactSection: React.FC = () => {
                     build something amazing, dont hesitate to contact me!
                 </p>
                 <LinkButton  href={mailtoGmail}
-          target="_blank"
+          targetBlank="_blank"
           rel="noopener noreferrer">
                     Get in touch!
                 </LinkButton>

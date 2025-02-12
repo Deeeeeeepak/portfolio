@@ -1,4 +1,6 @@
 type Props = {
+  target?: string; 
+  rel?: string;  
     href: string;
     targetBlank?: boolean;
     outline?: boolean;
