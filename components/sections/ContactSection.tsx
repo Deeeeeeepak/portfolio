@@ -59,7 +59,7 @@ const ContactSection: React.FC = () => {
                     build something amazing, dont hesitate to contact me!
                 </p>
                 <LinkButton  href={mailtoGmail}
-          targetBlank="_blank"
+          targetBlank={true}
           rel="noopener noreferrer">
                     Get in touch!
                 </LinkButton>
