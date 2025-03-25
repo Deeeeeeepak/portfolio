@@ -36,7 +36,10 @@ type Props = {
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
             />
           </svg>{" "}
-          by Deepak Borana
+          by{" "}
+          <span className="text-marrsgreen dark:text-carrigreen">
+            Deepak Borana
+          </span>
         </div>
       </footer>
     );
@@ -81,16 +84,17 @@ type Props = {
 
     {
       id: 3,
-      title: "Deepak Borana's Profile on Facebook",
-      link: "/",
+      title: "Email Deepak Borana",
+      link: "mailto:deepakborana01@gmail.com",
       svg: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
+          viewBox="0 0 24 24"
         >
-          <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z" />
+          <path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"/>
         </svg>
       ),
     },

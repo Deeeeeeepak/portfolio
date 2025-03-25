@@ -44,8 +44,6 @@ const educationInfo: Education[] = [
             "Achieved excellent academic performance"
         ]
     }
-    
-
 ];
 
 export default function AboutSection() {
@@ -128,7 +126,7 @@ export default function AboutSection() {
   }, [aboutSection, onSectionChange]);
 
   return (
-    <div ref={sectionRef} className="about-panel bg-white dark:bg-[#1B2731] relative">
+    <div ref={sectionRef} className="about-panel bg-white dark:bg-[#1B2731] relative overflow-hidden">
       <section id="whoami" className="section">
         <RoughNotationGroup>
           <div className="text-center">
@@ -144,23 +142,33 @@ export default function AboutSection() {
           </div>
           <div className="md:grid grid-rows-5 lg:grid-rows-6 grid-cols-5">
             <div className="col-start-1 col-end-3 row-start-1 row-end-4 lg:row-end-7 lg:col-start-1 lg:col-end-3 flex justify-center items-center py-4 lg:mb-[20%]">
-              <div className="relative w-72">
-                {/* SVGs and Image */}
-                <div className="profile-picture overflow-hidden md:overflow-visible rounded-md md:shadow-2xl">
-                  <Image
-                    src={deepak}
-                    width={1700}
-                    height={1790}
-                    priority
-                    alt="Sat Naing profile picture"
-                    className="rounded-md "
-                  />
+              <div className="relative w-[95%] max-w-md">
+                {/* Decorative elements around image */}
+                <div className="absolute -top-6 -left-6 w-24 h-24 bg-yellow-200/30 rounded-full blur-xl" />
+                <div className="absolute top-1/2 -right-8 w-20 h-20 bg-blue-200/30 rounded-full blur-xl" />
+                <div className="absolute -bottom-6 left-1/2 w-28 h-28 bg-green-200/30 rounded-full blur-xl" />
+                
+                {/* Image container with gradient borders */}
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/50 via-green-200/30 to-blue-200/50 rounded-xl transform rotate-3" />
+                  <div className="absolute inset-0 bg-gradient-to-tl from-purple-200/30 via-pink-200/30 to-blue-200/50 rounded-xl transform -rotate-3" />
+                  
+                  <div className="profile-picture relative z-10 overflow-hidden rounded-xl shadow-2xl border-4 border-white/50 dark:border-slate-700/50">
+                    <Image
+                      src={deepak}
+                      width={1700}
+                      height={1790}
+                      priority
+                      alt="Sat Naing profile picture"
+                      className="rounded-lg transform transition-transform hover:scale-105 duration-500"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
             <p className="col-start-1 col-end-3 row-start-4 row-end-6 lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
-            As a Computer Science Engineering student, I have gained hands-on experience, focusing on both frontend and backend technologies. In addition to my practical skills, my education has provided a strong foundation, allowing me to continually grow and adapt in the tech field.
+              As a Computer Science Engineering student, I have gained hands-on experience, focusing on both frontend and backend technologies. In addition to my practical skills, my education has provided a strong foundation, allowing me to continually grow and adapt in the tech field.
             </p>
 
             <div

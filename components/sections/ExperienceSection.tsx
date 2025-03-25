@@ -47,14 +47,14 @@ const ExperienceCard: React.FC<{ experience: Experience }> = ({ experience }) =>
     return (
         <div className="group relative mb-8 md:mb-10">
             {/* Timeline dot and line */}
-            <div className="hidden md:block absolute left-[-35px] top-0 h-full w-[2px] bg-marrsgreen/20 dark:bg-carrigreen/20">
-                <div className="sticky top-0 h-[15px] w-[15px] rounded-full bg-marrsgreen dark:bg-carrigreen transform translate-x-[-6.5px]" />
+            <div className="hidden md:block absolute left-[-35px] top-0 h-full w-[2px] bg-gradient-to-b from-marrsgreen/20 to-carrigreen/20">
+                <div className="sticky top-0 h-[15px] w-[15px] rounded-full bg-gradient-to-r from-marrsgreen to-carrigreen transform translate-x-[-6.5px]" />
             </div>
             
             {/* Card content */}
             <div className="p-6 rounded-lg border border-marrsgreen/20 dark:border-carrigreen/20 
                                         hover:border-marrsgreen dark:hover:border-carrigreen transition-all duration-300
-                                        bg-white/50 dark:bg-gray-950/50 backdrop-blur-sm
+                                        bg-gradient-to-br from-white/50 via-gray-100/50 to-gray-200/50 dark:from-gray-900/50 dark:via-gray-950/50 dark:to-gray-800/50 backdrop-blur-sm
                                         hover:shadow-lg hover:shadow-marrsgreen/10 dark:hover:shadow-carrigreen/10">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                     <div>
@@ -117,32 +117,42 @@ const ExperienceSection: React.FC = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} id="experience" className="section relative">
-            {/* Background pattern */}
-            <div className="absolute inset-0 bg-grid-marrsgreen/[0.05] dark:bg-grid-carrigreen/[0.05] -z-10" />
-            
-            <div className="text-center mb-12">
-                <RoughNotation
-                    type="underline"
-                    color={`${theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"}`}
-                    strokeWidth={2}
-                    order={1}
-                    show={isOnScreen}
-                >
-                    <h2 className="section-heading">Professional Experience</h2>
-                </RoughNotation>
-            </div>
+        <div className="bg-white dark:bg-[#1B2731] relative overflow-hidden">
+            <section ref={sectionRef} id="experience" className="section relative">
+                {/* Background pattern */}
+                <div className="absolute inset-0 bg-grid-marrsgreen/[0.05] dark:bg-grid-carrigreen/[0.05] -z-10" />
+                
+                {/* Decorative elements */}
+                <div className="absolute top-10 left-10 w-20 h-20 bg-marrsgreen/10 rounded-full blur-xl dark:bg-blue-500/5" />
+                <div className="absolute bottom-10 right-10 w-24 h-24 bg-carrigreen/10 rounded-full blur-xl dark:bg-teal-500/5" />
+                
+                <div className="text-center mb-12">
+                    <RoughNotation
+                        type="underline"
+                        color={`${theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"}`}
+                        strokeWidth={2}
+                        order={1}
+                        show={isOnScreen}
+                    >
+                        <h2 className="section-heading">Professional Experience</h2>
+                    </RoughNotation>
+                </div>
 
-            <div className="mt-8 md:mt-12 md:ml-[35px]" ref={elementRef}>
-                <RoughNotationGroup>
-                    {experiences.map((exp) => (
-                        <div key={exp.id} className="experience-card">
-                            <ExperienceCard experience={exp} />
-                        </div>
-                    ))}
-                </RoughNotationGroup>
-            </div>
-        </section>
+                <div className="mt-8 md:mt-12 md:ml-[35px]" ref={elementRef}>
+                    <RoughNotationGroup>
+                        {experiences.map((exp) => (
+                            <div key={exp.id} className="experience-card">
+                                <ExperienceCard experience={exp} />
+                            </div>
+                        ))}
+                    </RoughNotationGroup>
+                </div>
+            </section>
+            
+            {/* Add subtle background decorative elements similar to AboutSection */}
+            <div className="absolute -top-20 -left-20 w-64 h-64 bg-yellow-200/5 rounded-full blur-3xl dark:bg-blue-500/5" />
+            <div className="absolute bottom-20 right-20 w-64 h-64 bg-green-200/5 rounded-full blur-3xl dark:bg-teal-500/5" />
+        </div>
     );
 };
 
