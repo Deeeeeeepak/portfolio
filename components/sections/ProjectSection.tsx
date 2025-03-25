@@ -31,7 +31,7 @@ const ProjectSection: React.FC = () => {
                     </RoughNotation>
                 </div>
                 <span className="project-desc text-center block mb-4" ref={elementRef}>
-                    "Talk is cheap. Show me the code"? I got you. <br />
+                    &quot;Talk is cheap. Show me the code&quot;? I got you. <br />
                     Here are some of my projects you shouldn&apos;t miss
                 </span>
                 <div className="flex flex-wrap">
